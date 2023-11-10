@@ -45,7 +45,7 @@ jobs:
           cd kernel-source
           make ${args} ${{ env.KERNEL_TARGET }}_defconfig
           make -j64 ${args}
-          cat error.log
+          cat ${{ env.KERNEL_TARGET }}_defconfig
 
       - name: Package kernel
         run: |
